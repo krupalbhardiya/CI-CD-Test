@@ -30,6 +30,27 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        dev {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "CI-CD-DEV"
+        }
+
+        staging {
+            dimension "default"
+            applicationIdSuffix ".qa"
+            resValue "string", "app_name", "CI-CD-QA"
+        }
+
+        production {
+            dimension "default"
+            resValue "string", "app_name", "CI-CD"
+        }
+    }
 }
 
 dependencies {
