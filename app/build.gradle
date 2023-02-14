@@ -8,14 +8,14 @@ android {
     namespace 'com.example.ci_cd_test'
     compileSdk 33
 
-    signingConfigs {
-        release {
-            storeFile file(System.getenv('SIGNING_KEY'))
-            storePassword System.getenv('KEY_STORE_PASSWORD')
-            keyAlias System.getenv('ALIAS')
-            keyPassword System.getenv('KEY_PASSWORD')
-        }
-    }
+//    signingConfigs {
+//        release {
+//            storeFile file(System.getenv('SIGNING_KEY'))
+//            storePassword System.getenv('KEY_STORE_PASSWORD')
+//            keyAlias System.getenv('ALIAS')
+//            keyPassword System.getenv('KEY_PASSWORD')
+//        }
+//    }
 
     defaultConfig {
         applicationId "com.example.ci_cd_test"
@@ -23,7 +23,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-        signingConfig signingConfigs.release
+//        signingConfig signingConfigs.release
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

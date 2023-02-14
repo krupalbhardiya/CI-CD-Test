@@ -11,6 +11,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      ALIAS: ${{secrets.ALIAS}}
+      KEY_STORE_PASSWORD: ${{secrets.KEY_STORE_PASSWORD}}
+      KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
+
     steps:
     - uses: actions/checkout@v3
     - name: set up JDK 11
