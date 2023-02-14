@@ -5,18 +5,15 @@ plugins {
 
 android {
 
-    Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
     namespace 'com.example.ci_cd_test'
     compileSdk 33
 
     signingConfigs {
         release {
-            storeFile file(properties.getProperty('SIGNING_KEY'))
-            storePassword properties.getProperty('KEY_STORE_PASSWORD')
-            keyAlias properties.getProperty('ALIAS')
-            keyPassword properties.getProperty('KEY_PASSWORD')
+            storeFile file(System.getenv('SIGNING_KEY'))
+            storePassword System.getenv('KEY_STORE_PASSWORD')
+            keyAlias System.getenv('ALIAS')
+            keyPassword System.getenv('KEY_PASSWORD')
         }
     }
 
